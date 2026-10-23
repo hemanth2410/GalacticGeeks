@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Galactic Geeks | Hemanth</title>
+    <!-- Browser Tab Icon (Favicon) -->
+    <link rel="icon" type="image/x-icon" href="./SiteAssets/40FF00.png">
+    <link rel="apple-touch-icon" href="./SiteAssets/40FF00.png">
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Galactic Geeks | Hemanth">
+    <meta name="description" content="System Profile // Game Dev, Rendering, XR & Low-Level Systems.">
+
+    <!-- Open Graph / WhatsApp / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hemanth2410.github.io/PortfolioWebsite/">
+    <meta property="og:title" content="Galactic Geeks | Hemanth">
+    <meta property="og:description" content="System Profile // Game Dev, Rendering, XR & Low-Level Systems.">
+    <!-- MUST be an absolute URL for WhatsApp to read it properly -->
+    <meta property="og:image" content="https://hemanth2410.github.io/PortfolioWebsite/SiteAssets/LOGO.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+
+    <!-- Twitter Preview Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hemanth2410.github.io/PortfolioWebsite/">
+    <meta name="twitter:title" content="Galactic Geeks | Hemanth">
+    <meta name="twitter:description" content="System Profile // Game Dev, Rendering, XR & Low-Level Systems.">
+    <meta name="twitter:image" content="https://hemanth2410.github.io/PortfolioWebsite/SiteAssets/LOGO.png">
+</head>
+<body>
+    <div class="canvas-container">
+        <canvas id="Matrix"></canvas>
+        <script src="./index.js"></script>
+    </div>
+
+    <div class="overlay-text">
+        <div class="containerFlex">
+            <div>
+                <p class="GreetingMessage blink-smooth">HI!</p>
+            </div>
+            <div class="VerticalContainer">
+                <div class="Heading2">SYSTEM PROFILE // HEMANTH</div>
+                <div class="Code-text textAnim">
+                    I build things that move, render, react, simulate and occasionally break spectacularly.<br />
+
+                    My playground spans game development, rendering, XR, AI, simulation and low-level systems. From building custom graphics technology and GPU-driven systems to designing gameplay and virtual worlds, I like being close to the machinery underneath the experience.
+                    <br />
+                    I learn by building.
+                    <br />
+                    I build by breaking things.
+                    <br />
+                    And I keep going until I understand why they broke.
+                </div>
+                <div class="ButtonWrapper containerFlex">
+                    <button class="IntroButtonStyle" id="EnableBtn">
+                        <span class="ButtonText">ENTER</span>
+                    </button>
+                    <div>
+                        <span class="HiddenText textAnim" id="text"></span><span class="cursor blink-rapid" style="color:#00FF00">▄</span>
+                    </div>
+                </div>
+                <script>
+                    // --- ENTER BUTTON LOGIC ---
+                    const enableBtn = document.getElementById('EnableBtn');
+                    const enterTextElement = document.getElementById('text');
+                    const enterPhrase = "Booting...";
+                    let enterIndex = 0;
+
+                    enableBtn.addEventListener('click', function() {
+                    enterTextElement.style.display = 'inline';
+                    typeEnter();
+                    }, { once: true });
+
+                    function typeEnter() {
+                    if (enterIndex < enterPhrase.length) {
+                    enterTextElement.textContent += enterPhrase.charAt(enterIndex);
+                    enterIndex++;
+                    setTimeout(typeEnter, 180);
+                    } else {
+                    setTimeout(() => {
+                        window.location.href = 'site.html';
+                    });
+                    }
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
